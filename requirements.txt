@@ -1,7 +1,8 @@
-numpy
 pandas
-scikit-learn
+numpy
+nltk
 joblib
-pdfplumber
 sentence-transformers
+scikit-learn
+PyMuPDF
 Flask

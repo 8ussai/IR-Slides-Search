@@ -1,3 +1,5 @@
+import re
+
 from pathlib import Path
 
 PROJECT_ROOT: Path = Path(__file__).resolve().parents[1]
@@ -6,7 +8,14 @@ DATA_DIR: Path = PROJECT_ROOT / "data"
 RAW_SLIDES_DIR: Path = DATA_DIR / "raw_slides"
 PROCESSED_DIR: Path = DATA_DIR / "processed"
 
-SLIDES_CORPUS_CSV: Path = PROCESSED_DIR / "slides_corpus.csv"
+SLIDES_CORPUS_CSV: Path = PROCESSED_DIR / "slides_corpus_raw.csv"
+SLIDES_CORPUS_TFIDF: Path = PROCESSED_DIR / "slides_corpus_tfidf.csv"
+SLIDES_CORPUS_EMBED: Path = PROCESSED_DIR / "slides_corpus_embed.csv"
+FINAL_SLIDES_COROUS: Path = PROCESSED_DIR / "final_slides_corpus.csv"
+
+WORD_PATTERN = re.compile(r"\w+")
+URL_PATTERN = re.compile(r"https?://\S+|www\.\S+")
+MULTISPACE_PATTERN = re.compile(r"\s+")
 
 MODELS_DIR: Path = PROJECT_ROOT / "models"
 

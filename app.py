@@ -1,9 +1,7 @@
-from pathlib import Path
 from typing import List, Dict
 from flask import Flask, render_template, request, send_from_directory
 
-from src.search.search_tfidf import search_tfidf
-from src.search.search_embeddings import search_embeddings
+from src.search_engine import search_tfidf, search_embeddings
 from src.config import RAW_SLIDES_DIR
 
 app = Flask(__name__)
